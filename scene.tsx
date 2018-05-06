@@ -1,51 +1,41 @@
-import { createElement, ScriptableScene } from 'metaverse-api'
 
-const networkHz = 6
-const interval = 1000 / networkHz
+import { createElement, ScriptableScene } from "metaverse-api";
 
-export default class RollerCoaster extends ScriptableScene<any, { time: number }> {
-  state = { time: 0 }
+export default class SharkAnimation extends ScriptableScene {
+    state = {
+        bitestate: false,
+        dancestate: false
+    };
 
-  timeout = setInterval(() => {
-    this.setState({
-      time: performance.now() * .001
-    })
-  }, interval)
+    async sceneDidMount() {
+        this.eventSubscriber.on(`supershark_click`, () => this.clickedOnShark());
+    }
 
-  sceneWillUnmount() {
-    clearInterval(this.timeout)
-  }
+    clickedOnShark() {
+        this.setState({ bitestate: !this.state.bitestate });
+    }
 
-  async render() {
-    const { time } = this.state
-
-    const size = 1
-
-    const x = Math.cos(time) * Math.cos(time) * size
-    const y = Math.cos(time) * Math.sin(time) * size
-    const z = Math.sin(time) * size
-
-    return (
-      <scene>
-        <entity position={{ x: 5, y: 4, z: 5 }}>
-          <entity
-            id="train"
-            position={{ x: x, y: y, z: z }}
-            rotation={{ x: Math.cos(time) * 40, y: Math.sin(time) * 40, z: 0 }}
-            transition={{
-              position: { duration: interval },
-              rotation: { duration: interval }
-            }}
-          >
-            <box position={{ x: 0, y: -1, z: 0 }} color="black" scale={{ x: 3, y: 0.4, z: 5 }} />
-            <box position={{ x: 1.5, y: 0, z: 0 }} color="red" scale={{ x: 0.2, y: 1, z: 5 }} />
-            <box position={{ x: -1.5, y: 0, z: 0 }} color="yellow" scale={{ x: 0.2, y: 1, z: 5 }} />
-
-            <box position={{ x: 0, y: 0, z: 2.5 }} color="green" scale={{ x: 3, y: 1, z: 0.2 }} />
-            <box position={{ x: 0, y: 0, z: -2.5 }} color="blue" scale={{ x: 3, y: 1, z: 0.2 }} />
-          </entity>
-        </entity>
-      </scene>
-    )
-  }
+    async render() {
+        return (
+            <scene>
+                <gltf-model
+                    id="supershark"
+                    position={{ x: 1, y: 1, z: 1 }}
+                    scale={0.5}
+                    src="models/shark.gltf"
+                    skeletalAnimation={
+                        this.state.bitestate
+                            ? [
+                                  { clip: "shark_skeleton_bite", playing: false },
+                                  { clip: "shark_skeleton_swim", weight: 0.2, playing: true }
+                              ]
+                            : [
+                                  { clip: "shark_skeleton_bite", playing: true, loop: true },
+                                  { clip: "shark_skeleton_swim", weight: 1.0, playing: true }
+                              ]
+                    }
+                />
+            </scene>
+        );
+    }
 }
