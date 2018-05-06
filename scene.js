@@ -66,20 +66,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "../../../../private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.8638494374584831.WebWorker.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "../../../../private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.48417387238238563.WebWorker.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "../../../../private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.8638494374584831.WebWorker.js":
-/*!************************************************************************************************!*\
-  !*** /private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.8638494374584831.WebWorker.js ***!
-  \************************************************************************************************/
+/***/ "../../../../private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.48417387238238563.WebWorker.js":
+/*!*************************************************************************************************!*\
+  !*** /private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.48417387238238563.WebWorker.js ***!
+  \*************************************************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Users_thaddeuswoodman_code_dcl_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/metaverse-rpc/lib/common/transports/WebWorker */ \"./node_modules/metaverse-rpc/lib/common/transports/WebWorker.js\");\n\n\nconst imported = __webpack_require__(/*! ./scene.tsx */ \"./scene.tsx\")\n\nif (imported && imported.__esModule && imported['default']) {\n  new imported['default'](Object(_Users_thaddeuswoodman_code_dcl_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__[\"WebWorkerTransport\"])(self))\n}\n\n\n//# sourceURL=webpack:////private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.8638494374584831.WebWorker.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Users_thaddeuswoodman_code_dcl_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/metaverse-rpc/lib/common/transports/WebWorker */ \"./node_modules/metaverse-rpc/lib/common/transports/WebWorker.js\");\n\n\nconst imported = __webpack_require__(/*! ./scene.tsx */ \"./scene.tsx\")\n\nif (imported && imported.__esModule && imported['default']) {\n  new imported['default'](Object(_Users_thaddeuswoodman_code_dcl_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__[\"WebWorkerTransport\"])(self))\n}\n\n\n//# sourceURL=webpack:////private/var/folders/s0/c9hgs49n5qq_qdgv5swkybgr0000gn/T/0.48417387238238563.WebWorker.js?");
 
 /***/ }),
 
@@ -658,7 +658,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return SharkAnimation; });\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! metaverse-api */ \"./node_modules/metaverse-api/lib/index.js\");\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(metaverse_api__WEBPACK_IMPORTED_MODULE_0__);\n\nclass SharkAnimation extends metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"ScriptableScene\"] {\n    constructor() {\n        super(...arguments);\n        this.state = {\n            bitestate: false,\n            dancestate: false\n        };\n    }\n    async sceneDidMount() {\n        this.eventSubscriber.on(`supershark_click`, () => this.clickedOnShark());\n    }\n    clickedOnShark() {\n        this.setState({ bitestate: !this.state.bitestate });\n    }\n    async render() {\n        return (Object(metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"scene\", null,\n            Object(metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"gltf-model\", { id: \"supershark\", position: { x: 1, y: 1, z: 1 }, scale: 0.5, src: \"models/shark.gltf\", skeletalAnimation: this.state.bitestate\n                    ? [\n                        { clip: \"shark_skeleton_bite\", playing: false },\n                        { clip: \"shark_skeleton_swim\", weight: 0.2, playing: true }\n                    ]\n                    : [\n                        { clip: \"shark_skeleton_bite\", playing: true, loop: true },\n                        { clip: \"shark_skeleton_swim\", weight: 1.0, playing: true }\n                    ] })));\n    }\n}\n\n\n//# sourceURL=webpack:///./scene.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return SharkAnimation; });\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! metaverse-api */ \"./node_modules/metaverse-api/lib/index.js\");\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(metaverse_api__WEBPACK_IMPORTED_MODULE_0__);\n\nclass SharkAnimation extends metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"ScriptableScene\"] {\n    constructor() {\n        super(...arguments);\n        this.state = {\n            bitestate: false,\n            dancestate: false\n        };\n    }\n    async sceneDidMount() {\n        this.eventSubscriber.on(`supershark_click`, () => this.clickedOnShark());\n    }\n    clickedOnShark() {\n        this.setState({ bitestate: !this.state.bitestate });\n    }\n    async render() {\n        return (Object(metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"scene\", null,\n            Object(metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"gltf-model\", { id: \"supershark\", position: { x: 1, y: 1, z: 1 }, scale: 0.5, src: \"models/shark.gltf\", skeletalAnimation: this.state.bitestate\n                    ? [\n                        { clip: \"shark_skeleton_bite\", playing: false },\n                        { clip: \"shark_skeleton_swim\", weight: 0.2, playing: true }\n                    ]\n                    : [\n                        { clip: \"shark_skeleton_bite\", playing: true, loop: true },\n                        { clip: \"shark_skeleton_swim\", weight: 1.0, playing: true }\n                    ] }),\n            Object(metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"])(\"gltf-model\", { id: \"lkj\", position: { x: 5, y: 5, z: 5 }, scale: 0.5, src: \"models/cinemascene.gltf\" })));\n    }\n}\n\n\n//# sourceURL=webpack:///./scene.tsx?");
 
 /***/ })
 

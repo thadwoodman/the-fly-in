@@ -35,6 +35,12 @@ export default class SharkAnimation extends ScriptableScene {
                               ]
                     }
                 />
+                <gltf-model 
+                    id="lkj"
+                    position={{ x: 5, y: 5, z: 5 }}
+                    scale={0.5}
+                    src="models/cinemascene.gltf"
+                />
             </scene>
         );
     }
