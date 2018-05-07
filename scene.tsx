@@ -19,27 +19,46 @@ export default class SharkAnimation extends ScriptableScene {
         return (
             <scene>
                 <gltf-model
-                    id="supershark"
-                    position={{ x: 1, y: 1, z: 1 }}
-                    scale={0.5}
-                    src="models/shark.gltf"
-                    skeletalAnimation={
-                        this.state.bitestate
-                            ? [
-                                  { clip: "shark_skeleton_bite", playing: false },
-                                  { clip: "shark_skeleton_swim", weight: 0.2, playing: true }
-                              ]
-                            : [
-                                  { clip: "shark_skeleton_bite", playing: true, loop: true },
-                                  { clip: "shark_skeleton_swim", weight: 1.0, playing: true }
-                              ]
-                    }
+                    id="redcar"
+                    position={{ x: 2, y: 2, z: 6 }}
+                    scale={0.3}
+                    src="models/fcf.glb"
                 />
-                <gltf-model 
-                    id="lkj"
-                    position={{ x: 5, y: 5, z: 5 }}
-                    scale={0.5}
-                    src="models/cinemascene.gltf"
+                 <gltf-model
+                    id="bluecar"
+                    position={{ x: 5, y: 5, z: 3 }}
+                    scale={0.3}
+                    src="models/fcfblue.glb"
+                />
+                 <gltf-model
+                    id="graycar"
+                    position={{ x: 7, y: 7, z: 1 }}
+                    scale={0.3}
+                    src="models/fcfgray.glb"
+                />
+                <gltf-model
+                    id="screen"
+                    position={{ x: 7, y: 2, z: 6 }}
+                    scale={0.3}
+                  //  src="models/screentest2.glb"
+                />
+                <plane
+                    id="movie"
+                    position={{x: 9.5, y: 3, z: 5}}
+                    scale={2.5}
+                    height={1}
+                    width={2}
+                    material={{src: "video/divine.gif"}}
+                    rotation={{x: 0, y: 90, z: 0}}
+
+                />
+                <plane
+                id="ground"
+                position={{x: 5, y: 0, z: 5}}
+                scale={10}
+                material={{src: "image/ground.jpg"}}
+                rotation={{x: 90, y: 0, z: 0}}
+
                 />
             </scene>
         );
