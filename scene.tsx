@@ -17,6 +17,7 @@ export default class FlyIn extends ScriptableScene<any, { time: number}> {
    	async render() {
    		const float = Math.cos(this.state.time)
    		const glide = Math.sin(this.state.time)
+   		//console.log ("float: " + float)
          return (
             <scene>
 
@@ -32,13 +33,13 @@ export default class FlyIn extends ScriptableScene<any, { time: number}> {
 	                    scale={.5}
 	                    src="models/spink.glb"
 	                />
-	                 <gltf-model
+	            	<gltf-model
 	                    id="blueship"
 	                    position={{ x: (3 + float/10), y: (.05 + glide/12), z: 6 }}
 	                    scale={.5}
 	                    src="models/sblue.glb"
 	                />
-	                 <gltf-model
+	                <gltf-model
 	                    id="orangeship"
 	                    position={{ x: (7 + float/12), y: (.02 + glide/4), z: 2 }}
 	                    scale={.5}
@@ -50,16 +51,26 @@ export default class FlyIn extends ScriptableScene<any, { time: number}> {
 	                    scale={2.5}
 	                    height={1}
 	                    width={2}
-	                    material={{src: "image/fmt.jpg"}}
+						material={{src: "video/divine.mp4"}}
 	                    rotation={{x: 0, y: 0, z: 0}}
+	                />
 
-	                />
 	                <gltf-model
-	                id="ground"
-	                position={{x: 5, y: 0, z: 5}}
-	                src="models/land.glb"
-	                scale={.999}
+	                 id="ground"
+	                 position={{x: 5, y: 0, z: 5}}
+	                 src="models/land.glb"
+	                 scale={.999}
 	                />
+
+					<box
+					 id="kiosk"
+					 position={{x: 5, y: 1, z:9.5}}
+					 scale={.9}
+					 height={1}
+					 width={3}
+					 color="yellow"
+					 material={{src: "image/begin.png"}}
+					/>
             </scene>
         );
     }
